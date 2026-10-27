@@ -1,0 +1,15 @@
+package com.inno.authservice.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class ValidateRequest {
+
+    @NotBlank
+    private String accessToken;
+}
