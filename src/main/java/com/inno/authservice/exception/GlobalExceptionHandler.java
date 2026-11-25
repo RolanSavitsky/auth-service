@@ -42,11 +42,6 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleOther(Exception e) {
-        return build(HttpStatus.INTERNAL_SERVER_ERROR, "Internal server error");
-    }
-
     private ResponseEntity<ErrorResponse> build(HttpStatus status, String message) {
         return ResponseEntity.status(status)
                 .body(new ErrorResponse(
